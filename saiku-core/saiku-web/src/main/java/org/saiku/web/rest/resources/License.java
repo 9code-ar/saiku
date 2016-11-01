@@ -72,14 +72,13 @@ public class License {
   @GET
   @Produces({ "application/json" })
   public Response getLicense() {
-  /*  try {
+    try {
       return Response.ok().entity(licenseUtils.getLicense()).build();
     } catch (IOException | RepositoryException | ClassNotFoundException e) {
       e.printStackTrace();
     }
     return Response.serverError().build();
-  */
-    return Response.ok().build();
+  
   }
 
   private static final int SIZE = 2048;
@@ -96,7 +95,7 @@ public class License {
   @Produces("text/plain")
   @ReturnType("java.lang.String")
   public Response saveLicense(InputStream is) {
-  /*  ObjectInputStream si = null;
+    ObjectInputStream si = null;
     byte[] sig;
     byte[] data = null;
     try {
@@ -131,7 +130,7 @@ public class License {
 
 
     getLicenseUtils().setLicense(new String(Base64Coder.encode(data)));
-*/
+
     return Response.ok("License Upload Successful").build();
   }
 
@@ -145,7 +144,7 @@ public class License {
   @Produces({ "text/plain" })
   @ReturnType("java.lang.String")
   public Response validateLicense() {
-/*    if(!userService.isAdmin()){
+    if(!userService.isAdmin()){
       return Response.status(Response.Status.FORBIDDEN).build();
     }
     try {
@@ -167,7 +166,7 @@ public class License {
     } catch (Exception e) {
       e.printStackTrace();
     }
-*/
+
     return Response.ok().entity("Valid License").build();
 
 
